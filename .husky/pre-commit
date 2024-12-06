@@ -1,0 +1,6 @@
+pnpm lint
+
+if [ $? -ne 0 ]; then
+  echo "Lint check failed! Please run 'pnpm lint:fix' to automatically fix issues."
+  exit 1
+fi
