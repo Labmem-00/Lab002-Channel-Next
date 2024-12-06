@@ -1,5 +1,5 @@
 //git提交规范
-//例如：git commit -m "fix(ui'该项为强制填写'): 修复了一个bug"
+//例如：git commit -m "fix(ui'该项为强制填写,简短描述添加或者修改的模块'): 修复了一个bug"
 
 export default {
     extends: ['@commitlint/config-conventional'],
