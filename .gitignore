@@ -1,40 +1,38 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# 忽略 node_modules 目录
 /node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
 
-# testing
+# pnpm 的虚拟存储目录
+.pnp
+.pnp.*
+
+# 忽略测试覆盖率报告目录
 /coverage
 
-# next.js
+# 忽略 Next.js 构建输出目录
 /.next/
 /out/
 
-# production
+# 忽略生产环境构建目录
 /build
 
-# misc
+# 忽略 MacOS 下的文件
 .DS_Store
+
+# 忽略密钥文件
 *.pem
 
-# debug
+# 忽略 npm 和 yarn 的调试日志
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env files (can opt-in for committing if needed)
+# 忽略所有的环境变量文件
 .env*
 
-# vercel
+# 忽略 Vercel 部署配置目录
 .vercel
 
-# typescript
+# 忽略 TypeScript 构建信息
 *.tsbuildinfo
 next-env.d.ts
+
