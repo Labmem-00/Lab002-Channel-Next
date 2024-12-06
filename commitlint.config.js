@@ -6,6 +6,7 @@ export default {
     rules: {
         'scope-empty': [2, 'never'],
         'body-max-line-length': [2, 'always', 100],
+        'type-case': [2, 'always', 'lower-case'],
         'type-enum': [
             2,
             'always',
