@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev -p 48596 --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
