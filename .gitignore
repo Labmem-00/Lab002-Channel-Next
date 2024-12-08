@@ -31,6 +31,7 @@ yarn-error.log*
 
 # 忽略 Vercel 部署配置目录
 .vercel
+.env.local
 
 # 忽略 TypeScript 构建信息
 *.tsbuildinfo
