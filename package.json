@@ -26,7 +26,7 @@
     "@types/prop-types": "^15.7.14",
     "@types/react": "^18.3.14",
     "@types/react-dom": "^18.3.2",
-    "eslint": "^9.16.0",
+    "eslint": "8.57.0",
     "eslint-config-next": "15.0.3",
     "husky": "^9.1.7",
     "postcss": "^8.4.49",
