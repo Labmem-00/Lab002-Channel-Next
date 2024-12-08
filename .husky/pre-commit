@@ -1,3 +1,5 @@
+pnpm lint:fix
+
 pnpm lint
 
 if [ $? -ne 0 ]; then

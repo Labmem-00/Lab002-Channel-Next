@@ -4,7 +4,6 @@
     "React": "readonly"
   },
   "rules": {
-    "no-console": "warn",
     "camelcase": "warn",
     "no-var": "error",
     "import/order": "off",

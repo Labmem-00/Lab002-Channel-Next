@@ -13,8 +13,9 @@ export const mongoDB = async () => {
   }
 
   try {
-    await mongoose.connect(MONGODB_URI);  // 不需要额外的 options
+    await mongoose.connect(MONGODB_URI);  
     isConnected = true;
+    console.log(`MongoDB: connection successful! `);
   } catch (error) {
     throw new Error('DB connect error!');
   }
