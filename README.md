@@ -11,5 +11,7 @@ Mongoose Mongoo数据库连接
 
 ioredis redis数据库连接
 
+sass 1.78
+
 <!-- commit前将执行ESLint代码审查 push前将执行build以确保推送前项目可正常构建 -->
 
