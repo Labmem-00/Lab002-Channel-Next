@@ -1,4 +1,4 @@
-import './global.css';
+import '@/assets/styles/global.scss';
 import { ThemeProvider } from 'next-themes';
 export default function RootLayout({
   children,
