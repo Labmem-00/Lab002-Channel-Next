@@ -1,8 +1,6 @@
-@import './theme.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 :root {
   font-family: system-ui;
