@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 主题切换 */
+.dark {
+  --bg-color: red;
+}
+.light {
+  --bg-color: white;
+}
+
 :root {
   font-family: system-ui;
 
