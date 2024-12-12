@@ -1,0 +1,31 @@
+aside {
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    width: 270px;
+    height: 100vh;
+    height: 100dvh;
+    border: 1px solid black;
+    scrollbar-width: thin;
+
+    @media (max-width: var(--breakpoint-pc)) {
+        flex-shrink: 0.2;
+    }
+}
+
+main {
+    border: 1px solid black;
+}
+
+#content {
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+    width: var(--breakpoint-pc);
+    min-width: 0;
+
+    > main {
+        flex-grow: 1;
+        min-width: 0;
+    }
+}

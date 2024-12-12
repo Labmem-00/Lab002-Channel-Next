@@ -11,7 +11,7 @@ export default {
             2,
             'always',
         [
-          'bug',      // 此项特别针对bug号，用于向测试反馈bug列表的bug修改情况
+          'bug',      // 此项特别针对bug号，用于反馈bug列表的bug修改情况
           'feat',     // 新功能（feature）
           'fix',      // 修补bug
           'docs',     // 文档（documentation）

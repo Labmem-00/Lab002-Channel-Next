@@ -1,5 +1,7 @@
 pnpm lint:fix
 
+pnpm lint:style
+
 pnpm lint
 
 if [ $? -ne 0 ]; then

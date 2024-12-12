@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './baseTemplate.module.scss'
 
-interface IBaseTemplate {}
+interface BaseTemplateProps {}
 
-const BaseTemplate: React.FC<IBaseTemplate> = () => {
+const BaseTemplate: React.FC<BaseTemplateProps> = () => {
   return (
     <div className={styles.template}>Hello world!</div>
   );
