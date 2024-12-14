@@ -1,0 +1,7 @@
+.nav-bar{
+    display: flex;
+    border: 1px solid red;
+    & a{
+        padding: 1rem;
+    }
+}

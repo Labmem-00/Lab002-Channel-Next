@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* 主题切换 */
 .dark {
     --bg-color: red;
@@ -28,6 +27,7 @@
     text-size-adjust: 100%; /* 禁止 IE 和 Edge 自动调整文本大小 */
     -webkit-tap-highlight-color: rgb(0 0 0 / 0%); /* 移除ios设备上的点击高亮效果 */
 }
+
 
 * {
     margin: 0;

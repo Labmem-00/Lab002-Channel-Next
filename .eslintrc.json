@@ -4,7 +4,6 @@
     "React": "readonly"
   },
   "rules": {
-    "camelcase": "warn",
     "no-var": "error",
     "import/order": "off",
     "arrow-parens": ["error", "always"],

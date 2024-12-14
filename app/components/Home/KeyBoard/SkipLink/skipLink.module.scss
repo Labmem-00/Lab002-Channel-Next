@@ -1,0 +1,14 @@
+.skip-link {
+    position: fixed;
+    width: 80%;
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: skyblue;
+    text-align: center;
+    z-index: 1;
+    clip: rect(0, 0, 0, 0); /* 默认隐藏链接 */
+}
+
+.skip-link:focus {
+    clip: auto; /* 当链接获得焦点时，显示出来 */
+}

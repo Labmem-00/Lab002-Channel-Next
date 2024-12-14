@@ -9,7 +9,7 @@ const BaseTemplate: React.FC<BaseTemplateProps> = () => {
   );
 };
 
-// const BaseTemplate2: React.FC = ()=>{
+// const BaseTemplate: React.FC = ()=>{
 //   return (
 //     <div></div>
 //   )
