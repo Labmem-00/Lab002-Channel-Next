@@ -1,6 +1,7 @@
 'use client';
 
 import { useSpring, animated } from '@react-spring/web';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Press_Start_2P } from 'next/font/google';
@@ -11,12 +12,15 @@ const ChanTitle: React.FC = () => {
   const [aniState, setAniState] = useState(false);
   const [hoverState, setHoverState] = useState(false); // 用来控制鼠标悬浮时显示图片3
 
+  const [isShow, setIsShow] = useState(false);
+  const pathName = usePathname();
+
   const handleMouseEnter = useDebounce(() => {
-      setHoverState(true) 
-  },200) 
+    setHoverState(true);
+  }, 200);
   const handleMouseLeave = useDebounce(() => {
-    setHoverState(false) 
-  },200)
+    setHoverState(false);
+  }, 200);
 
   const propsImg = useSpring({
     from: { opacity: 0, transform: 'translateY(30px)' },
@@ -33,34 +37,41 @@ const ChanTitle: React.FC = () => {
   });
 
   useEffect(() => {
+    if (pathName === '/') {
+      setIsShow(true);
+    } else {
+      setIsShow(false);
+    }
     const timerId = setTimeout(() => {
       setAniState(true);
     }, 300);
     return () => clearTimeout(timerId);
-  }, []);
+  }, [pathName]);
+
+  if (!isShow) return null;
   return (
-    <div className="absolute flex top-8 left-1/2 text-4xl font-extrabold transform -translate-x-1/2">
-      <span className="relative bottom-4">
-        {aniState && (
-          <animated.div style={propsImg}>
-            <Image
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              src={
-                hoverState
-                  ? '/title-png/title1.png' 
-                  : '/title-png/title2.png' 
-              } 
-              alt=""
-              width={80}
-              height={80}
-            ></Image>
-          </animated.div>
-        )}
-      </span>
-      <animated.span className={banger.className} style={propsText}>
-        @CHAN
-      </animated.span>
+    <div id="chan-title" className="relative w-full h-28 border-solid border-2">
+      <div className="absolute flex top-8 left-1/2 text-4xl font-extrabold transform -translate-x-1/2">
+        <span className="relative bottom-4 hidden xs:block">
+          {aniState && (
+            <animated.div style={propsImg}>
+              <Image
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                src={
+                  hoverState ? '/title-png/title1.png' : '/title-png/title2.png'
+                }
+                alt=""
+                width={80}
+                height={80}
+              ></Image>
+            </animated.div>
+          )}
+        </span>
+        <animated.span className={banger.className} style={propsText}>
+          @CHAN
+        </animated.span>
+      </div>
     </div>
   );
 };

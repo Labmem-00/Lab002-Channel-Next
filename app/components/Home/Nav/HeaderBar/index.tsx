@@ -1,7 +1,8 @@
-'use client';
+'use client'
+
 import ChanLink from '@/components/Partial/ChanLink';
 import styles from './headerBar.module.scss';
-import Image from 'next/image';
+import Info from './info';
 
 const links = [
   { name: '主页', href: '/' },
@@ -16,13 +17,13 @@ const HeaderBar: React.FC = () => {
       id="chan-header"
       className="flex justify-center items-center sticky top-0 border-2 border-balck border-solid"
     >
-      <Image
+      {/* <Image
         className="absolute -z-10 -left-4"
         src={'/title-png/site-logo.webp'}
         alt="SteinsGate"
         width={250}
         height={65}
-      ></Image>
+      ></Image> */}
       <nav className={styles['nav-bar']}>
         {links.map((link) => {
           return (
@@ -32,14 +33,7 @@ const HeaderBar: React.FC = () => {
           );
         })}
       </nav>
-      <div
-        id="header-func"
-        className="absolute right-0 flex justify-center border-2 gap-4 border-solid border-green "
-      >
-        <div className='avator'>avator</div>
-        <div className='config'>config</div>
-        <input type="search" placeholder="Search..."></input>
-      </div>
+      <Info></Info>
     </header>
   );
 };

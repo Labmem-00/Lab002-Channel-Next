@@ -1,5 +1,5 @@
-import { mongoDB } from '../../lib/mongoose';
-import redis from '../../lib/redis';
+import { mongoDB } from '../../../lib/mongoose';
+import redis from '../../../lib/redis';
 export async function GET() {
   const key = 'my_key';
   try {

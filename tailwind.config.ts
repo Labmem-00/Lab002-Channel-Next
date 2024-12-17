@@ -8,7 +8,11 @@ export default {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens:{
+        'xs': '480px'
+      }
+    },
   },
   plugins: [],
 } satisfies Config;
