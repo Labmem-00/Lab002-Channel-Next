@@ -24,7 +24,8 @@
     "pusher": "^5.2.0",
     "pusher-js": "8.4.0-rc2",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react-responsive": "^10.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
@@ -33,6 +34,7 @@
     "@types/prop-types": "^15.7.14",
     "@types/react": "^18.3.14",
     "@types/react-dom": "^18.3.2",
+    "@types/react-responsive": "^8.0.8",
     "@zinkawaii/stylelint-config": "^0.2.2",
     "clsx": "^2.1.1",
     "eslint": "8.57.0",

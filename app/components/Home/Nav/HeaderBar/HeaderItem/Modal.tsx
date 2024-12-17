@@ -11,7 +11,7 @@ const Modal: React.FC = () => {
         <button>登录</button>
       </div>
       <div className="config">
-        <Icon icon='eos-icons:rotating-gear' width={30} height={30}></Icon>
+        <Icon icon='eos-icons:rotating-gear' width={36} height={36}></Icon>
       </div>
     </div>
   );

@@ -6,18 +6,19 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Press_Start_2P } from 'next/font/google';
 import { useDebounce } from '@/hooks/useDebounce';
+import { useMediaQuery } from 'react-responsive';
 
 const banger = Press_Start_2P({ weight: ['400'], subsets: ['latin'] });
 const ChanTitle: React.FC = () => {
   const [aniState, setAniState] = useState(false);
   const [hoverState, setHoverState] = useState(false); // 用来控制鼠标悬浮时显示图片3
-
   const [isShow, setIsShow] = useState(false);
+  const isXsOrSmaller = useMediaQuery({ query: '(max-width: 520px)' });
   const pathName = usePathname();
 
   const handleMouseEnter = useDebounce(() => {
     setHoverState(true);
-    console.log('ni')
+    console.log('ni');
   }, 200);
   const handleMouseLeave = useDebounce(() => {
     setHoverState(false);
@@ -70,7 +71,10 @@ const ChanTitle: React.FC = () => {
             </animated.div>
           )}
         </span>
-        <animated.span className={banger.className} style={propsText}>
+        <animated.span
+          className={banger.className}
+          style={isXsOrSmaller ? undefined : propsText}
+        >
           @CHAN
         </animated.span>
       </div>

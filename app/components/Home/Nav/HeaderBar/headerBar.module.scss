@@ -2,13 +2,19 @@
     display: flex;
     position: relative;
     border: 1px solid red;
-
+    align-items: center;
+    margin-left: 1%;
     & a {
         padding: 1rem;
+    }
+    
+    & a{
+        border: 1px solid black;
     }
 }
 
 .chan-header {
+    height: 60px;
     margin-right: 0.5%;
     margin-left: 0.5%;
     border-radius: 12px;
