@@ -2,8 +2,8 @@
 
 import ChanLink from '@/components/Partial/ChanLink';
 import styles from './headerBar.module.scss';
-import Info from './Info';
 import Search from './Search';
+import Modal from './Modal';
 
 const links = [
   { name: '主页', href: '/' },
@@ -28,7 +28,7 @@ const HeaderBar: React.FC = () => {
         })}
       </nav>
       <Search></Search>
-      <Info></Info>
+      <Modal></Modal>
     </header>
   );
 };

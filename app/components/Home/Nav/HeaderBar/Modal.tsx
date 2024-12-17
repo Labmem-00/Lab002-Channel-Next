@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import React from 'react';
 
-const Info: React.FC = () => {
+const Modal: React.FC = () => {
   return (
     <div
       id="header-info"
@@ -17,4 +17,4 @@ const Info: React.FC = () => {
   );
 };
 
-export default Info;
+export default Modal;
