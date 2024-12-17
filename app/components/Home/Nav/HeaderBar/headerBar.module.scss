@@ -1,8 +1,15 @@
 .nav-bar {
-    display: flex;
-    border: 1px solid red;
+  display: flex;
+  position: relative;
+  border: 1px solid red;
 
-    & a {
-        padding: 1rem;
-    }
+  & a {
+    padding: 1rem;
+  }
+}
+
+.chan-header {
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  border-radius: 12px;
 }

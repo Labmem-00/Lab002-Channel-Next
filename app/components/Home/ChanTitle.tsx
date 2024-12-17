@@ -17,6 +17,7 @@ const ChanTitle: React.FC = () => {
 
   const handleMouseEnter = useDebounce(() => {
     setHoverState(true);
+    console.log('ni')
   }, 200);
   const handleMouseLeave = useDebounce(() => {
     setHoverState(false);
@@ -44,13 +45,13 @@ const ChanTitle: React.FC = () => {
     }
     const timerId = setTimeout(() => {
       setAniState(true);
-    }, 300);
+    }, 500);
     return () => clearTimeout(timerId);
   }, [pathName]);
 
   if (!isShow) return null;
   return (
-    <div id="chan-title" className="relative w-full h-28 border-solid border-2">
+    <div id="chan-title" className="relative w-full h-28 ">
       <div className="absolute flex top-8 left-1/2 text-4xl font-extrabold transform -translate-x-1/2">
         <span className="relative bottom-4 hidden xs:block">
           {aniState && (
@@ -64,6 +65,7 @@ const ChanTitle: React.FC = () => {
                 alt=""
                 width={80}
                 height={80}
+                layout="intrinsic"
               ></Image>
             </animated.div>
           )}
