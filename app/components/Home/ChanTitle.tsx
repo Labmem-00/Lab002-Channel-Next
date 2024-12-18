@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { Press_Start_2P } from 'next/font/google';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useMediaQuery } from 'react-responsive';
-
 const banger = Press_Start_2P({ weight: ['400'], subsets: ['latin'] });
 const ChanTitle: React.FC = () => {
   const [aniState, setAniState] = useState(false);

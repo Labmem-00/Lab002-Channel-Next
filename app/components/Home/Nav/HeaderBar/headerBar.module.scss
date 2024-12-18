@@ -1,14 +1,15 @@
 .nav-bar {
     display: flex;
-    position: relative;
-    border: 1px solid red;
     align-items: center;
+    position: relative;
     margin-left: 1%;
+    border: 1px solid red;
+
     & a {
         padding: 1rem;
     }
     
-    & a{
+    & a {
         border: 1px solid black;
     }
 }
