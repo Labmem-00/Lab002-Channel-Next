@@ -10,7 +10,7 @@ const Search: React.FC = () => {
       flex 
       absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
     >
-      <input className='max-w-32' type="search" placeholder="Search..."></input>
+      <input className='max-w-38' type="search" placeholder="Search..."></input>
       <Icon icon="pixelarticons:search" width="36" height="36"></Icon>
     </div>
   );
