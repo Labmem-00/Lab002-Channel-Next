@@ -6,12 +6,16 @@ const Search: React.FC = () => {
     <div
       className="chan-search 
       max-w-sm
-      border-solid border-2  
+      h-8
+      border-solid border-2  rounded-md
       flex 
       absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
     >
-      <input className='max-w-38' type="search" placeholder="Search..."></input>
-      <Icon icon="pixelarticons:search" width="36" height="36"></Icon>
+      <input className='max-w-32 ld:max-w-48'  type="search" placeholder="Search..."></input>
+      <div className='mx-1 pl-1 border-l-2 border-solid rounded-sm'>
+        <Icon icon="pixelarticons:search" width="28" height="28"></Icon>
+      </div>
+      
     </div>
   );
 };
