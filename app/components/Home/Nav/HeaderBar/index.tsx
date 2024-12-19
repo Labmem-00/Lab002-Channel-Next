@@ -1,7 +1,8 @@
 import styles from './headerBar.module.scss';
 import Search from './HeaderItem/Search';
-import Modal from './HeaderItem/Modal';
+
 import HeaderNav from './HeaderItem/HeaderNav';
+import HeaderModalButton from './HeaderItem/HeaderModalButton';
 
 const links = [
   { name: '主页', href: '/' },
@@ -18,7 +19,7 @@ const HeaderBar: React.FC = () => {
     >
       <HeaderNav links={links}></HeaderNav>
       <Search></Search>
-      <Modal></Modal>
+      <HeaderModalButton></HeaderModalButton>
     </header>
   );
 };

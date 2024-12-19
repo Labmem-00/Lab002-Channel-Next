@@ -7,7 +7,7 @@ const Search: React.FC = () => {
       className="chan-search 
       max-w-sm
       h-8
-      border-solid border-2  rounded-md
+      border-solid border-2  rounded-sm
       flex 
       absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
     >

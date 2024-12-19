@@ -1,5 +1,6 @@
 import ChanTitle from './components/Home/ChanTitle';
 import SkipLink from './components/Home/KeyBoard/SkipLink';
+import Modal from './components/Home/Modal';
 import HeaderBar from './components/Home/Nav/HeaderBar';
 
 import './global.css';
@@ -31,6 +32,7 @@ export default function RootLayout({
                 {/* <aside id="r-aside"></aside> */}
               </div>
             </div>
+            <Modal></Modal>
           </ThemeProvider>
         </div>
       </body>
