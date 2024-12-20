@@ -1,0 +1,57 @@
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(30, 30, 30, 0.2);
+  backdrop-filter: blur(1px);
+  z-index: 998;
+}
+
+.modal-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    color: grey;
+    background-color: aliceblue;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover{
+        color: white;
+        background-color: skyblue;
+    }
+}
+
+.chan-modal {
+  --m: 16px; /* 控制外边距 */
+  // 居中定位
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  z-index: 999;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 16px;
+  height: fit-content; /* 内容自适应高度 */
+  width: fit-content; /* 宽度自适应内容 */
+  max-height: calc(100dvh - var(--m) * 2); /* 最大高度是视口高度减去边距 */
+  max-width: calc(100% - var(--m) * 2); /* 最大宽度是屏幕宽度减去边距 */
+  min-width: var(--size-min-width); /* 最小宽度限制 */
+  overflow: hidden; /* 防止内容溢出 */
+  
+  @media screen and (max-width: 425px){
+    --m: 0px;
+    border-radius: 0;
+  }
+}
+
+.chan-account {
+  width: 640px;
+  overflow: auto;
+  @media screen and (max-width: 420px) {
+    height: 100dvh;
+  }
+}
