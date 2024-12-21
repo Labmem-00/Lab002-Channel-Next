@@ -1,123 +1,130 @@
 /* 遮罩层进入动画 */
 @keyframes mask-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* 遮罩层离开动画 */
 @keyframes mask-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* 模态框进入动画 */
 @keyframes modal-in {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* 模态框离开动画 */
 @keyframes modal-out {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
 }
 
 /* 遮罩层样式 */
 .modal-mask {
-  position: fixed;
-  inset: 0;
-  background-color: rgb(30 30 30 / 20%);
-  backdrop-filter: blur(1px);
-  z-index: 998;
-  animation: mask-in 0.4s ease-out forwards; /* 遮罩进入动画 */
+    position: fixed;
+    inset: 0;
+    background-color: rgb(30 30 30 / 20%);
+    backdrop-filter: blur(1px);
+    animation: mask-in 0.4s ease-out forwards; /* 遮罩进入动画 */
+    z-index: 998;
 
-  &.mask-out {
-    animation: mask-out 0.4s ease-in forwards; /* 遮罩离开动画 */
-  }
+    &.mask-out {
+        animation: mask-out 0.4s ease-in forwards; /* 遮罩离开动画 */
+    }
 }
 
 /* 关闭按钮样式 */
 .modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border-radius: 50%;
-  background-color: aliceblue;
-  color: grey;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    background-color: aliceblue;
+    color: grey;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
-  &:hover {
-    background-color: skyblue;
-    color: white;
-  }
+    &:hover {
+        background-color: skyblue;
+        color: white;
+    }
 }
 
 /* 模态框样式 */
 .chan-modal {
-  --m: 16px; /* 控制外边距 */
+    --m: 16px; /* 控制外边距 */
 
-  display: grid;
-  grid-template-rows: 1fr;
+    display: grid;
+    grid-template-rows: 1fr;
 
-  // 居中定位
-  position: fixed;
-  overflow: hidden; /* 防止内容溢出 */
-  inset: 0;
-  width: fit-content; /* 宽度自适应内容 */
-  height: fit-content; /* 内容自适应高度 */
-  min-width: var(--size-min-width); /* 最小宽度限制 */
-  max-width: calc(100% - var(--m) * 2); /* 最大宽度是屏幕宽度减去边距 */
-  max-height: calc(100dvh - var(--m) * 2); /* 最大高度是视口高度减去边距 */
-  margin: auto;
-  border: 1px solid black;
-  border-radius: 16px;
-  background-color: white;
-  z-index: 999;
-  opacity: 0;
-  animation: modal-in 0.4s ease-out forwards; /* 模态框进入动画 */
+    // 居中定位
+    position: fixed;
+    overflow: hidden; /* 防止内容溢出 */
+    opacity: 0;
+    inset: 0;
+    width: fit-content; /* 宽度自适应内容 */
+    height: fit-content; /* 内容自适应高度 */
+    min-width: var(--size-min-width); /* 最小宽度限制 */
+    max-width: calc(100% - var(--m) * 2); /* 最大宽度是屏幕宽度减去边距 */
+    max-height: calc(100dvh - var(--m) * 2); /* 最大高度是视口高度减去边距 */
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 16px;
+    background-color: white;
+    animation: modal-in 0.4s ease-out forwards; /* 模态框进入动画 */
+    z-index: 999;
 
-  @media screen and (width <= 425px) {
-    --m: 0px;
-    border-radius: 0;
-  }
+    @media screen and (width <= 425px) {
+        --m: 0px;
 
-  &.modal-out {
-    animation: modal-out 0.4s ease-in forwards; /* 模态框离开动画 */
-  }
+        border-radius: 0;
+    }
+
+    &.modal-out {
+        animation: modal-out 0.4s ease-in forwards; /* 模态框离开动画 */
+    }
 }
 
 /* 模态框内容样式 */
 .chan-account {
-  overflow: auto;
-  width: 640px;
+    overflow: auto;
+    width: 640px;
 
-  @media screen and (width <= 420px) {
-    height: 100dvh;
-  }
+    @media screen and (width <= 420px) {
+        height: 100dvh;
+    }
 }
