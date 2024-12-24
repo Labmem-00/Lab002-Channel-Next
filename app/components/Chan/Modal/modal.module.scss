@@ -118,13 +118,3 @@
         animation: modal-out 0.4s ease-in forwards; /* 模态框离开动画 */
     }
 }
-
-/* 模态框内容样式 */
-.chan-account {
-    overflow: auto;
-    width: 640px;
-
-    @media screen and (width <= 420px) {
-        height: 100dvh;
-    }
-}

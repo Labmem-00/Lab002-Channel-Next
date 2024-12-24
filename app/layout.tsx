@@ -1,7 +1,7 @@
-import ChanTitle from './components/Home/ChanTitle';
-import SkipLink from './components/Home/KeyBoard/SkipLink';
-import Modal from './components/Home/Modal';
-import HeaderBar from './components/Home/Nav/HeaderBar';
+import SkipLink from './components/Chan/KeyBoard/SkipLink';
+import ChanTitle from './components/Page/Home/ChanTitle';
+import Modal from './components/Chan/Modal';
+import HeaderBar from './components/Chan/Nav/HeaderBar';
 
 import './global.css';
 import './styles/main.scss';

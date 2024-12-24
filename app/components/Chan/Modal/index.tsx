@@ -29,21 +29,24 @@ const Modal: React.FC = () => {
     <div id="chan-modal">
       <div
         className={`${styles['modal-mask']} ${isVisiable ? '' : styles['mask-out']}`}
-        onClick={closeModal}
+        onClick={() => {
+          setVisiable(false);
+        }}
       >
         {/* 这是遮罩层 */}
       </div>
       <div
         className={`${styles['chan-modal']} ${isVisiable ? '' : styles['modal-out']}`}
       >
-        <Component></Component>
+        <Component>{/*动态弹窗组件*/}</Component>
         <button
           onClick={() => {
             setVisiable(false);
           }}
           className={styles['modal-close']}
         >
-          <Icon icon="line-md:close-small" width={28} height={28}></Icon>
+          {/* 关闭按钮 */}
+          <Icon icon="line-md:close" width={28} height={28}></Icon>
         </button>
       </div>
     </div>
