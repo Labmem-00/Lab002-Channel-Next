@@ -40,7 +40,6 @@ const Account: React.FC = () => {
         >
           {formType === FormType.Login ? <Login /> : <Register />}
           <div id="account-toggle" className={styles['account-toggle']}>
-            <button>忘记密码</button>
             <button onClick={toggleFormType}>
               <span
                 className={

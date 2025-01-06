@@ -27,15 +27,19 @@ const Login: React.FC = () => {
         label="密码"
         required
       ></AuthInput>
-      <button className='absolute right-10 top-24' onClick={handleShowPassword}>
-        <Icon
-          className="relative bottom-1 ml-2 mr-2 w-5 h-5 hover:text-blue-400"
-          icon={
-            showPassword ? 'garden:eye-stroke-16' : 'pepicons-pencil:eye-closed'
-          }
-        ></Icon>
-      </button>
-
+      <div className="absolute right-8 top-24 z-10">
+        <button onClick={handleShowPassword}>
+          <Icon
+            className="relative bottom-1 ml-2 mr-2 w-5 h-5 hover:text-blue-400"
+            icon={
+              showPassword
+                ? 'garden:eye-stroke-16'
+                : 'pepicons-pencil:eye-closed'
+            }
+          ></Icon>
+        </button>
+      </div>
+      <button className='relative left-16 mt-4' >忘记密码</button>
       <button
         className="grid place-items-center
         justify-self-center m-4 w-24 h-7
