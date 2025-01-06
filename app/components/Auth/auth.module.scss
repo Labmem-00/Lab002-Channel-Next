@@ -13,8 +13,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 288px;
-    padding: 32px;
+    width: 320px;
+    padding: 18px;
 
     .chan-form {
       display: grid;
@@ -28,16 +28,18 @@
     padding-bottom: 8px;
 
     .login-toggle {
-      &:after {
-        margin-left: 5px;
-        font-size: 18px;
+      &::after {
         content: '>';
         display: inline-block;
+        margin-left: 5px;
+        font-size: 18px;
         transition: all 0.3s ease-in-out;
       }
+
       &:hover {
         color: gray;
-        &:after {
+
+        &::after {
           color: skyblue;
           animation: move 0.9s infinite ease-in-out; /* 循环动画 */
         }
@@ -45,16 +47,18 @@
     }
 
     .register-toggle {
-      &:before {
-        margin-right: 5px;
-        font-size: 18px;
+      &::before {
         content: '<';
         display: inline-block;
+        margin-right: 5px;
+        font-size: 18px;
         transition: all 0.3s ease-in-out;
       }
+
       &:hover {
         color: gray;
-        &:before {
+
+        &::before {
           color: skyblue;
           animation: move-reverse 0.9s infinite ease-in-out; /* 循环动画 */
         }
@@ -63,17 +67,18 @@
   }
 }
 
-
 /* 定义指针移动的关键帧动画 */
 @keyframes move {
   0% {
     transform: translateX(0); /* 初始位置 */
   }
+
   50% {
     transform: translateX(7px); /* 向右更远移动 */
   }
+
   100% {
-    transform: translateX(0px); /* 恢复到初始位置 */
+    transform: translateX(0); /* 恢复到初始位置 */
   }
 }
 
@@ -81,10 +86,12 @@
   0% {
     transform: translateX(0); /* 初始位置 */
   }
+
   50% {
     transform: translateX(-5px); /* 向右更远移动 */
   }
+
   100% {
-    transform: translateX(0px); /* 恢复到初始位置 */
+    transform: translateX(0); /* 恢复到初始位置 */
   }
 }

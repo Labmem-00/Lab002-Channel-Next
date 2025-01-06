@@ -6,6 +6,9 @@ interface AuthInputProps extends PropsWithChildren {
   type: string;
   label: string; // label 文本
   required?: boolean;
+  value?: string; // 输入框的值
+  // eslint-disable-next-line no-unused-vars
+  onValueChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; 
 }
 
 const AuthInput: React.FC<AuthInputProps> = ({
@@ -13,6 +16,8 @@ const AuthInput: React.FC<AuthInputProps> = ({
   type,
   label,
   required = false,
+  value,
+  onValueChange,
   children,
 }) => {
   return (
@@ -26,6 +31,8 @@ const AuthInput: React.FC<AuthInputProps> = ({
           aria-labelledby={`${id}-label`} // 增强无障碍性
           autoComplete={id}
           placeholder="" //默认为空
+          value={value}
+          onChange={onValueChange}
         />
         <label
           id={`${id}-label`}

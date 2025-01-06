@@ -2,12 +2,12 @@
   display: grid;
   position: relative;
   margin-top: 22px;
+  font-size: 14px;
   line-height: 20px;
-  font-size: 15px;
+
   .input-entity {
     width: 100%;
-    padding: 4px;
-
+    padding: 5px;
     border: none;
     border-bottom: 1px solid #d2d6df;
     outline: none;
@@ -20,10 +20,16 @@
     &:focus ~ .input-placeholder,
     &:not(:placeholder-shown) ~ .input-placeholder {
       top: -1em;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1em;
       color: hwb(216deg 36% 16%);
     }
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0 1000px white inset; // 伪类 hack
+      box-shadow: 0 0 0 1000px white inset;
+      background-color: transparent; // 或其他颜色
+    } //清除自动填充的背景色
   }
 
   .input-placeholder {
