@@ -1,104 +1,103 @@
 /* 模态框内容样式 */
 .chan-account {
-  overflow: auto;
-  width: 640px;
-  height: 372px;
-  padding: 32px;
-
-  @media screen and (width <= 425px) {
-    height: 100dvh;
-  }
-
-  .account-form {
-    position: absolute;
-    right: 0;
-    top: 50%; 
-    transform: translateY(-50%);
-    width: 320px;
+    overflow: auto;
+    width: 640px;
+    height: 372px;
     padding: 32px;
 
-    .chan-form {
-      display: grid;
-      place-items: center;
+    @media screen and (width <= 425px) {
+        height: 100dvh;
     }
 
-    @media (max-width: 425px) {
-      left: 50%;
-      right: auto; // 覆盖右对齐样式
-      transform: translateX(-50%); // 水平居中
-    }
-  }
+    .account-form {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 320px;
+        padding: 32px;
 
-  .account-toggle {
-    display: grid;
-    justify-items: center;
-    padding-bottom: 8px;
-
-    .login-toggle {
-      &::after {
-        content: '>';
-        display: inline-block;
-        margin-left: 5px;
-        font-size: 18px;
-        transition: all 0.3s ease-in-out;
-      }
-
-      &:hover {
-        color: gray;
-
-        &::after {
-          color: skyblue;
-          animation: move 0.9s infinite ease-in-out; /* 循环动画 */
+        .chan-form {
+            display: grid;
+            place-items: center;
         }
-      }
-    }
 
-    .register-toggle {
-      &::before {
-        content: '<';
-        display: inline-block;
-        margin-right: 5px;
-        font-size: 18px;
-        transition: all 0.3s ease-in-out;
-      }
-
-      &:hover {
-        color: gray;
-
-        &::before {
-          color: skyblue;
-          animation: move-reverse 0.9s infinite ease-in-out; /* 循环动画 */
+        @media (width <= 425px) {
+            right: auto; // 覆盖右对齐样式
+            left: 50%;
+            transform: translateX(-50%); // 水平居中
         }
-      }
     }
-  }
+
+    .account-toggle {
+        display: grid;
+        justify-items: center;
+        padding-bottom: 8px;
+
+        .login-toggle {
+            &::after {
+                content: ">";
+                display: inline-block;
+                margin-left: 5px;
+                font-size: 18px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                color: gray;
+
+                &::after {
+                    color: skyblue;
+                    animation: move 0.9s infinite ease-in-out; /* 循环动画 */
+                }
+            }
+        }
+
+        .register-toggle {
+            &::before {
+                content: "<";
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 18px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                color: gray;
+
+                &::before {
+                    color: skyblue;
+                    animation: move-reverse 0.9s infinite ease-in-out; /* 循环动画 */
+                }
+            }
+        }
+    }
 }
 
 /* 定义指针移动的关键帧动画 */
 @keyframes move {
-  0% {
-    transform: translateX(0); /* 初始位置 */
-  }
+    0% {
+        transform: translateX(0); /* 初始位置 */
+    }
 
-  50% {
-    transform: translateX(7px); /* 向右更远移动 */
-  }
+    50% {
+        transform: translateX(7px); /* 向右更远移动 */
+    }
 
-  100% {
-    transform: translateX(0); /* 恢复到初始位置 */
-  }
+    100% {
+        transform: translateX(0); /* 恢复到初始位置 */
+    }
 }
 
 @keyframes move-reverse {
-  0% {
-    transform: translateX(0); /* 初始位置 */
-  }
+    0% {
+        transform: translateX(0); /* 初始位置 */
+    }
 
-  50% {
-    transform: translateX(-5px); /* 向右更远移动 */
-  }
+    50% {
+        transform: translateX(-5px); /* 向右更远移动 */
+    }
 
-  100% {
-    transform: translateX(0); /* 恢复到初始位置 */
-  }
+    100% {
+        transform: translateX(0); /* 恢复到初始位置 */
+    }
 }
