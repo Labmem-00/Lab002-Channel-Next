@@ -40,6 +40,7 @@ const Account: React.FC = () => {
         >
           {formType === FormType.Login ? <Login /> : <Register />}
           <div id="account-toggle" className={styles['account-toggle']}>
+            <button>忘记密码</button>
             <button onClick={toggleFormType}>
               <span
                 className={
@@ -53,6 +54,7 @@ const Account: React.FC = () => {
                   : '已有账号，前往登录'}
               </span>
             </button>
+            
           </div>
         </animated.div>
       </div>

@@ -26,26 +26,16 @@ const Login: React.FC = () => {
         type={showPassword ? 'text' : 'password'}
         label="密码"
         required
-      >
-        <div>
-          <button onClick={handleShowPassword}>
-            <Icon
-              className="relative top-0.5 ml-2 mr-2 hover:text-blue-400"
-              icon={
-                showPassword
-                  ? 'garden:eye-stroke-16'
-                  : 'pepicons-pencil:eye-closed'
-              }
-            ></Icon>
-          </button>
-          <button
-            className="whitespace-nowra "
-            onClick={(e) => e.preventDefault()}
-          >
-            忘记密码
-          </button>
-        </div>
-      </AuthInput>
+      ></AuthInput>
+      <button className='absolute right-10 top-24' onClick={handleShowPassword}>
+        <Icon
+          className="relative bottom-1 ml-2 mr-2 w-5 h-5 hover:text-blue-400"
+          icon={
+            showPassword ? 'garden:eye-stroke-16' : 'pepicons-pencil:eye-closed'
+          }
+        ></Icon>
+      </button>
+
       <button
         className="grid place-items-center
         justify-self-center m-4 w-24 h-7
