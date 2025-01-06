@@ -1,54 +1,54 @@
 .auth-input {
-    display: grid;
-    position: relative;
-    margin-top: 22px;
-    line-height: 20px;
+  display: grid;
+  position: relative;
+  margin-top: 22px;
+  line-height: 20px;
+  font-size: 15px;
+  .input-entity {
+    width: 100%;
+    padding: 4px;
 
-    .input-entity {
-        width: 100%;
-        padding: 4px;
-        border: none;
-        border-bottom: 1px solid #d2d6df;
-        outline: none;
-        background: transparent;
-  
-        &:focus ~ .input-underline::before {
-            transform: scaleX(1);
-        }
-  
-        &:focus ~ .input-placeholder,
-        &:valid ~ .input-placeholder {
-            top: -1em;
-            font-size: 12px;
-            line-height: 1em;
-            color: hwb(216deg 36% 16%);
-        }
+    border: none;
+    border-bottom: 1px solid #d2d6df;
+    outline: none;
+    background: transparent;
+
+    &:focus ~ .input-underline::before {
+      transform: scaleX(1);
     }
-  
-    .input-placeholder {
-        position: absolute;
-        top: 4px;
-        left: 4px;
-        color: #3f51b5;
-        transition: all 0.25s;
-        pointer-events: none;
+
+    &:focus ~ .input-placeholder,
+    &:not(:placeholder-shown) ~ .input-placeholder {
+      top: -1em;
+      font-size: 17px;
+      line-height: 1em;
+      color: hwb(216deg 36% 16%);
     }
-  
-    .input-underline {
-        position: relative;
-        height: 1px;
-        background-color: #d2d6df;
-  
-        &::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background-color: blue;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s;
-        }
+  }
+
+  .input-placeholder {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    color: grey;
+    transition: all 0.25s;
+    pointer-events: none;
+  }
+
+  .input-underline {
+    position: relative;
+    height: 1px;
+    background-color: #d2d6df;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: blue;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
     }
+  }
 }
-  

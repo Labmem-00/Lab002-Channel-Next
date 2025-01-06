@@ -1,42 +1,90 @@
 /* 模态框内容样式 */
 .chan-account {
-    overflow: auto;
-    width: 640px;
-    height: 372px;
+  overflow: auto;
+  width: 640px;
+  height: 372px;
+  padding: 32px;
+
+  @media screen and (width <= 420px) {
+    height: 100dvh;
+  }
+
+  .account-form {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 288px;
     padding: 32px;
 
-    @media screen and (width <= 420px) {
-        height: 100dvh;
+    .chan-form {
+      display: grid;
+      place-items: center;
     }
+  }
 
-    .account-form {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 288px;
-        padding: 32px;
-    }
+  .account-toggle {
+    display: grid;
+    justify-items: center;
+    padding-bottom: 8px;
 
-    .account-header {
-        display: grid;
-        justify-items: flex-end;
-        padding-bottom: 8px;
-
-        h2 {
-            position: relative;
-            margin-bottom: 12px;
-            font-size: 28px;
-
-            &::after {
-                content: "";
-                position: absolute;
-                right: 0;
-                bottom: -6px;
-                width: calc(100% + 6px);
-                height: 3px;
-                border-radius: 3px;
-                background-color: hwb(216deg 50% 8%);
-            }
+    .login-toggle {
+      &:after {
+        margin-left: 5px;
+        font-size: 18px;
+        content: '>';
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: gray;
+        &:after {
+          color: skyblue;
+          animation: move 0.9s infinite ease-in-out; /* 循环动画 */
         }
+      }
     }
+
+    .register-toggle {
+      &:before {
+        margin-right: 5px;
+        font-size: 18px;
+        content: '<';
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: gray;
+        &:before {
+          color: skyblue;
+          animation: move-reverse 0.9s infinite ease-in-out; /* 循环动画 */
+        }
+      }
+    }
+  }
+}
+
+
+/* 定义指针移动的关键帧动画 */
+@keyframes move {
+  0% {
+    transform: translateX(0); /* 初始位置 */
+  }
+  50% {
+    transform: translateX(7px); /* 向右更远移动 */
+  }
+  100% {
+    transform: translateX(0px); /* 恢复到初始位置 */
+  }
+}
+
+@keyframes move-reverse {
+  0% {
+    transform: translateX(0); /* 初始位置 */
+  }
+  50% {
+    transform: translateX(-5px); /* 向右更远移动 */
+  }
+  100% {
+    transform: translateX(0px); /* 恢复到初始位置 */
+  }
 }

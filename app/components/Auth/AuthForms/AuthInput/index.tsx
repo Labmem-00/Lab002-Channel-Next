@@ -25,6 +25,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
           required={required}
           aria-labelledby={`${id}-label`} // 增强无障碍性
           autoComplete={id}
+          placeholder="" //默认为空
         />
         <label
           id={`${id}-label`}
