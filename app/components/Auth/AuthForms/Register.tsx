@@ -3,7 +3,7 @@ import AuthInput from './AuthInput';
 
 const Register: React.FC = () => {
   return (
-    <form className="grid justify-center w-48">
+    <form className="grid justify-center w-56">
       <AuthInput id="username" type="text" label="用户名" required />
       <AuthInput id="email" type="email" label="电子邮箱" required />
       <AuthInput id="verific" type="text" label="验证码" required>
