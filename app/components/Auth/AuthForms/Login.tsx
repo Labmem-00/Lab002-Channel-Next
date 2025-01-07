@@ -6,11 +6,7 @@ const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!showPassword) {
-      setShowPassword(true);
-    } else {
-      setShowPassword(false);
-    }
+    setShowPassword((prev) => !prev);
   };
 
   return (
@@ -27,7 +23,7 @@ const Login: React.FC = () => {
         label="密码"
         required
       ></AuthInput>
-      <div className="absolute right-8 top-24 z-10">
+      <div className="relative left-48 bottom-6 z-10">
         <button onClick={handleShowPassword}>
           <Icon
             className="relative bottom-1 ml-2 mr-2 w-5 h-5 hover:text-blue-400"
@@ -39,7 +35,7 @@ const Login: React.FC = () => {
           ></Icon>
         </button>
       </div>
-      <button className='relative left-16 mt-4' >忘记密码</button>
+      <button className="relative left-16 ">忘记密码</button>
       <button
         className="grid place-items-center
         justify-self-center m-4 w-24 h-7
