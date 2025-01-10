@@ -1,30 +1,49 @@
 import React, { useState } from 'react';
 import AuthInput from './AuthInput';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import Axios from '@/lib/axios';
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const handleShowPassword = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const [loginForm, setLoginForm] = useState({
+    username: '',
+    password: '',
+  });
+
+  const handleShowPassword = () => {
     setShowPassword((prev) => !prev);
   };
 
+  const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const { id, value } = e.target;
+    setLoginForm((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const res = await Axios.get('/hello');
+    alert(res.data.message)
+  };
+
   return (
-    <form className="grid justify-center w-56">
+    <form className="grid justify-center w-56" onSubmit={handleLogin}>
       <AuthInput
         id="username"
         type="text"
         label="用户名 / UID / 邮箱"
-        required
+        value={loginForm.username}
+        onValueChange={handleValueChange}
       />
       <AuthInput
         id="password"
         type={showPassword ? 'text' : 'password'}
         label="密码"
-        required
+        value={loginForm.password}
+        onValueChange={handleValueChange}
       ></AuthInput>
       <div className="relative left-48 bottom-6 z-10">
-        <button onClick={handleShowPassword}>
+        <button type="button" onClick={handleShowPassword}>
           <Icon
             className="relative bottom-1 ml-2 mr-2 w-5 h-5 hover:text-blue-400"
             icon={
