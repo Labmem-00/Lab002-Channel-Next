@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AuthInput from './AuthInput';
-import Axios from '@/lib/axios';
+import axios from 'axios';
 
 const Register: React.FC = () => {
   const [registerForm, setRegisterForm] = useState({
@@ -26,7 +26,7 @@ const Register: React.FC = () => {
   const handleSendEmail = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (countdown === 0) {
-      const res = await Axios.post('/auth/mail/register', {
+      const res = await axios.post('/api/auth/mail/register', {
         email: registerForm.email,
       });
       setCountdown(60);

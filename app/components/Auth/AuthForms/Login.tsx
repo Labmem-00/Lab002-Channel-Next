@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AuthInput from './AuthInput';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import Axios from '@/lib/axios';
+import axios from 'axios';
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await Axios.get('/hello');
+    const res = await axios.get('/api/hello')
     alert(res.data.message)
   };
 
