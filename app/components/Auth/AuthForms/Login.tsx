@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import AuthInput from './AuthInput';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import Axios from '@/request/axios';
+import {Axios} from '@/request/axios';
+import { funMessage } from '@/components/Function/funMessage';
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loginForm, setLoginForm] = useState({
-    username: '',
+    name: '',
     password: '',
   });
 
@@ -22,8 +23,9 @@ const Login: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await Axios.get('/api/hello')
+    const res = await Axios.get('/hello')
     alert(res.data.message)
+    funMessage('666', 'info');
   };
 
   return (
@@ -32,7 +34,7 @@ const Login: React.FC = () => {
         id="username"
         type="text"
         label="用户名 / UID / 邮箱"
-        value={loginForm.username}
+        value={loginForm.name}
         onValueChange={handleValueChange}
       />
       <AuthInput

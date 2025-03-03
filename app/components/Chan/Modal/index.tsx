@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useModalStore } from '@/store/temp/modal';
+import { useModalStore } from '@/store/temp/components/modal';
 import componentRegistry from './registry';
 import styles from './modal.module.scss';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -52,5 +52,7 @@ const Modal: React.FC = () => {
     </div>
   );
 };
+
+
 
 export default Modal;

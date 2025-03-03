@@ -1,0 +1,28 @@
+.message-container{
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   z-index: 9999;
+}
+
+.chan-message {
+  height: auto;
+  width: 520px;
+  border: 1px solid gold;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  padding: 1vh 10vw;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.7);
+ 
+  display: grid;
+  place-items: center;
+  font-size: larger;
+  @media screen and (width <= 520px) {
+    width: 95%;
+  }
+}

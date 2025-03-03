@@ -35,7 +35,7 @@ export const sendValidCodeMail = async (
   // 限制特定邮件和 IP 的发送频率
   const limitEmail = await redis.get(`limit:email:${email}`);
   const limitIP = await redis.get(`limit:ip:${ip}`);
-  
+
   if (limitEmail === '1' || limitIP === '1') {
     return false;
   }
@@ -44,37 +44,33 @@ export const sendValidCodeMail = async (
 
   await redis.set(email, code, 'EX', 5 * 60);
   // 限制邮件和 IP 的发送频率，设置限制时间为 30 秒
-  await redis.set(`limit:email:${email}`, '1', 'EX', 60); // 每 30 秒限制一次邮件
-  await redis.set(`limit:ip:${ip}`, '1', 'EX', 60); // 每 30 秒限制一次 IP
-  return true;
-  //   await redis.set(email, code, 'EX', 5 * 60); // 验证码有效期 5 分钟
-  //   await redis.set(`limit:email:${email}`, code, 'EX', 30);
-  //   await redis.set(`limit:ip:${ip}`, code, 'EX', 30);
+  await redis.set(`limit:email:${email}`, '1', 'EX', 60); // 每 60 秒限制一次邮件
+  await redis.set(`limit:ip:${ip}`, '1', 'EX', 60); 
 
-  //   const transporter = createTransport({
-  //     service: 'qq',
-  //     port: 465,
-  //     secure: true,
-  //     auth: {
-  //       user: process.env.CHAN_EMAIL_ACCOUNT,
-  //       pass: process.env.CHAN_EMAIL_PASSWORD,
-  //     },
-  //   });
+  const transporter = createTransport({
+    service: 'qq',
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.CHAN_EMAIL_ACCOUNT,
+      pass: process.env.CHAN_EMAIL_PASSWORD,
+    },
+  });
 
-  //   const mailOptions = {
-  //     from: `labmem.chat <${process.env.CHAN_EMAIL_ACCOUNT}>`,
-  //     sender: process.env.CHAN_EMAIL_ACCOUNT,
-  //     to: email,
-  //     subject: '@chan verification code',
-  //     text: codeMailContent(type, code),
-  //   };
+  const mailOptions = {
+    from: `labmem.chat <${process.env.CHAN_EMAIL_ACCOUNT}>`,
+    sender: process.env.CHAN_EMAIL_ACCOUNT,
+    to: email,
+    subject: '@chan verification code',
+    text: codeMailContent(type, code),
+  };
 
-  //   try {
-  //     const info = await transporter.sendMail(mailOptions);
-  //     console.log(`验证邮件已发送: ${info.messageId}`);
-  //     return true
-  //   } catch (error) {
-  //     console.error('发送失败:', error);
-  //     return null
-  //   }
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log(`验证邮件已发送: ${info.messageId}`);
+    return true;
+  } catch (error) {
+    console.error('发送失败:', error);
+    return null;
+  }
 };

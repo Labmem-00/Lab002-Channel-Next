@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { ModalStore } from '../type/model';
+import type { ModalStore } from '../../type/model';
 
 const useModalStore = create<ModalStore>((set) => ({
   isOpen: false,

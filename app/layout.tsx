@@ -17,16 +17,16 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <div id="chan-root" >
+        <div id="chan-root">
           <ThemeProvider attribute="class" defaultTheme="system">
             <ChanTitle></ChanTitle>
-            <HeaderBar></HeaderBar>   
-            <div id='chan' className="flex justify-center gap-4 min-w-0">
+            <HeaderBar></HeaderBar>
+            <div id="chan" className="flex justify-center gap-4 min-w-0">
               <SkipLink></SkipLink>
               {/* <aside></aside> */}
               <div id="content">
                 <main id="main-content">
-                  {children}      
+                  {children}
                   <footer>footer</footer>
                 </main>
                 {/* <aside id="r-aside"></aside> */}

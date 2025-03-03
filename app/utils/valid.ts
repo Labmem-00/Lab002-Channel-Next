@@ -73,3 +73,8 @@ export const isValidPassword = (pwd: string) => {
   const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])[\w!@#$%^&*()+=\\/-]{6,107}$/;
   return regex.test(pwd);
 };
+
+export const isValidMailConfirmCode = (code: string) => {
+  const regex = /^[a-zA-Z0-9]{6}$/
+  return regex.test(code)
+}

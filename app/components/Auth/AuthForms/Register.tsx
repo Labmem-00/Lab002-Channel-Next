@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import AuthInput from './AuthInput';
-import axios from 'axios';
+import { Axios } from '@/request/axios';
+import { chanRegister } from '@/request/user/user.req';
+import { RegisterRequestParam } from '@/types/api/user';
 
 const Register: React.FC = () => {
-  const [registerForm, setRegisterForm] = useState({
-    username: '',
+  const [registerForm, setRegisterForm] = useState<RegisterRequestParam>({
+    name: '',
     email: '',
     code: '',
     password: '',
   });
-
   const [countdown, setCountdown] = useState(0); // 倒计时的状态
   useEffect(() => {
     if (countdown > 0) {
@@ -26,7 +27,7 @@ const Register: React.FC = () => {
   const handleSendEmail = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (countdown === 0) {
-      const res = await axios.post('/api/auth/mail/register', {
+      const res = await Axios.post('/mail/register', {
         email: registerForm.email,
       });
       setCountdown(60);
@@ -39,6 +40,12 @@ const Register: React.FC = () => {
     }
   };
 
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    let res = await chanRegister(registerForm);
+    alert(res.headers['chan-error']);
+  };
+
   // 表单项
   const formFields = [
     { id: 'username', type: 'text', label: '用户名' },
@@ -48,7 +55,7 @@ const Register: React.FC = () => {
   ];
 
   return (
-    <form className="grid justify-center w-56">
+    <form className="grid justify-center w-56" onSubmit={handleRegister}>
       {formFields.map(({ id, type, label, hasButton }) => (
         <AuthInput
           key={id}

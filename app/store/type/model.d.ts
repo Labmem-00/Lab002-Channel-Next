@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import type { ComponentKey} from '@/types/modal';
+import type { ComponentKey } from '@/types/components/modal';
 
 export interface ModalStore {
   isOpen: boolean;
